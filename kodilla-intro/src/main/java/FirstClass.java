@@ -12,5 +12,21 @@ public class FirstClass {
         System.out.println(oldNotebook.weight + "g"+" "+ oldNotebook.price);
         oldNotebook.checkPrice();
         oldNotebook.checkWeight();
+
+        Grades myGrades = new Grades();
+        myGrades.add(1);
+        myGrades.add(6);
+        myGrades.add(1);
+        myGrades.add(8);
+        myGrades.add(1);
+        myGrades.add(2);
+        myGrades.add(2);
+        myGrades.add(2);
+        myGrades.add(3);
+        myGrades.add(5);
+
+        myGrades.getLastGrade();
+        myGrades.countAndDisplayAverageGrade();
+
     }
 }
