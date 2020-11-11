@@ -1,5 +1,5 @@
 public class Grades {
-    public int[] grades;
+    private int[] grades;
     private int size;
 
     public Grades(){
