@@ -33,14 +33,7 @@ public class UserDialogs {
         while (true) {
             System.out.println("Select color's first letter (G - green, Y- yellow, R - red, B-black:");
             String color = scanner.nextLine().trim().toUpperCase();
-            switch (color) {
-                case "G": return color;
-                case "Y": return color;
-                case "R": return color;
-                case "B": return color;
-                default:
-                    System.out.println("Wrong letter. Try again.");
-            }
+            return color;
         }
     }
 
