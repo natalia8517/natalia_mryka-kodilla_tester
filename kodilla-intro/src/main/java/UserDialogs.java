@@ -30,11 +30,10 @@ public class UserDialogs {
 
     public static String getColorFirstLetter() {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+
             System.out.println("Select color's first letter (G - green, Y- yellow, R - red, B-black:");
             String color = scanner.nextLine().trim().toUpperCase();
             return color;
-        }
     }
 
     public static int getValue() {
