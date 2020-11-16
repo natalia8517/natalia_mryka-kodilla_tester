@@ -3,7 +3,6 @@ public class UserApp {
         Application newApplication = new Application("Adam", 40.5, 178);
 
         System.out.println();
-        Math.PI;
 
         if (newApplication.name != null) {
             if (newApplication.age > 30 && newApplication.height > 160) {

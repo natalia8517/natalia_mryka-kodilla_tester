@@ -3,20 +3,19 @@ import java.util.Random;
 
 public class RandomNumber {
 
-     int maxNum = 0;
-     int minNum = 30;
+    static int maxNum = 0;
+    static int minNum = 30;
 
     public static void main(String[] args) {
-        RandomNumber randNum = new RandomNumber();
-        randNum.drawNumbers();
+        RandomNumber.drawNumbers();
     }
 
-    public void drawNumbers() {
+    public static void drawNumbers() {
         Random randomNumber = new Random();
         int sum = 0;
 
         while (sum <= 5000) {
-            int number = randomNumber.nextInt(30+1);
+            int number = randomNumber.nextInt(30 + 1);
             sum = sum + number;
 
             getMax(number);
@@ -25,14 +24,14 @@ public class RandomNumber {
         System.out.println("Max number was " + maxNum + " Min number was " + minNum);
     }
 
-    public  void getMax(int number){
-        if (number > maxNum){
+    public static void getMax(int number) {
+        if (number > maxNum) {
             maxNum = number;
         }
     }
 
-    public void getMin(int number){
-        if (number <= minNum){
+    public static void getMin(int number) {
+        if (number <= minNum) {
             minNum = number;
         }
     }
