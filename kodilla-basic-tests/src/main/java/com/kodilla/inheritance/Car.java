@@ -4,6 +4,7 @@ public class Car {
     private int wheels;
     private int seats;
 
+
     public Car(int wheels, int seats) {
         this.wheels = wheels;
         this.seats = seats;
