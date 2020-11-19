@@ -7,9 +7,10 @@ public class Application {
         int b = 8;
         int sumResult = calculator.sum(a,b);
         int substractResult = calculator.subtract(a,b);
+        int raiseToSquareResult = calculator.raiseToSquare(a);
         boolean correct = ResultChecker.assertEquals(13, sumResult);
         boolean isSubtractResultCorrect = ResultChecker.assertEquals(-3, substractResult);
-        boolean isSquareResultCorrect = ResultChecker.assertEquals(25, calculator.raiseToSquare(a));
+        boolean isSquareResultCorrect = ResultChecker.assertEquals(25, raiseToSquareResult);
 
         if (correct) {
             System.out.println("Metoda sum działa poprawnie dla liczb " + a + " i " + b);
