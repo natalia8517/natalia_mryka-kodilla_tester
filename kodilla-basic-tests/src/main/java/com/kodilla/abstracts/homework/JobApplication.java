@@ -14,7 +14,5 @@ public class JobApplication {
     private static void showJobsResponsibilities(Person person) {
         person.showResponsibilities();
     }
-
-
 }
 

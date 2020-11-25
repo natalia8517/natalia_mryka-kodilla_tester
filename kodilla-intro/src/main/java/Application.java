@@ -9,5 +9,4 @@ public class Application {
         this.age = age;
         this.height = height;
     }
-
 }

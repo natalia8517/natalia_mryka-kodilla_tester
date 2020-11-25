@@ -10,6 +10,6 @@ public class Calculator {
     }
 
     public int raiseToSquare(int a){
-        return a*a;
+        return (int) Math.round(Math.pow(a,2));
     }
 }
