@@ -11,7 +11,8 @@ import java.util.List;
 public class CarsListApplication {
     public static void main(String[] args) {
         List<Car> cars = new ArrayList<>();
-        cars.add(new Audi(100));
+        Car car1 = new Audi(100);
+        cars.add(car1);
         cars.add(new Ford(20));
         cars.add(new Opel(50));
 
@@ -22,6 +23,7 @@ public class CarsListApplication {
 
         cars.remove(1);
         cars.remove(new Opel(50));
+        cars.remove(car1);
 
         for (Car car : cars) {
             CarUtils.describeCar(car);
