@@ -1,10 +1,8 @@
 package com.kodilla.exception.homework;
 
-import com.kodilla.exception.AirportNotFoundException;
-
 public class WarehouseApp {
     public static void main(String[] args) {
-        Warehous warehous = new Warehous();
+        Warehouse warehous = new Warehouse();
         warehous.addOrder(new Order("1"));
         warehous.addOrder(new Order("2"));
         warehous.addOrder(new Order("3"));
