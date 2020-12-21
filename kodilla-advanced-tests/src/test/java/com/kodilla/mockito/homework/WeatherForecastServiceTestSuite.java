@@ -8,24 +8,23 @@ class WeatherForecastServiceTestSuite {
     WeatherForecastService service = new WeatherForecastService();
     User user = Mockito.mock(User.class);
     User user2 = Mockito.mock(User.class);
+    User user3 = Mockito.mock(User.class);
     Location location = Mockito.mock(Location.class);
     Location location2 = Mockito.mock(Location.class);
     Monit monit = Mockito.mock(Monit.class);
 
-
     @Test
     public void SubscribedClientAddedToLocationReceiveNotification() {
-        service.sendNotificationToUsersFromLocation(location, monit);
-        Mockito.verify(user, Mockito.times(1)).receive(monit);
+        service.sendNotificationToUsersFromLocation(location2, monit);
+        Mockito.verify(user3, Mockito.times(1)).receive(monit);
     }
 
     @Test
     public void ClientsSubscriptionCanBeRemovedFromLocation() {
-        service.removeSubscriberFromLocation(user, location);
-        service.sendNotificationToUsersFromLocation(location, monit);
-        Mockito.verify(user, Mockito.times(0)).receive(monit);
+        service.removeSubscriberFromLocation( location2, user3);
+        service.sendNotificationToUsersFromLocation(location2, monit);
+        Mockito.verify(user3, Mockito.times(0)).receive(monit);
     }
-//Można wycofać subskrypcję ze wszystkich lokalizacji, co równa się kompletnemu wypisaniu klienta z powiadomień.
 
     @Test
     public void UsersFromDifferentLocationShouldNotReceiveNotification() {
@@ -39,12 +38,21 @@ class WeatherForecastServiceTestSuite {
         Mockito.verify(user, Mockito.times(1)).receive(monit);
         Mockito.verify(user2, Mockito.times(1)).receive(monit);
     }
+    @Test
+    public void LocationCanBeRemovedAndNotificationWontBeSent() {
+        service.removeLocation(location2);
+        service.sendNotificationToUsersFromLocation(location2, monit);
+        Mockito.verify(user3, Mockito.times(0)).receive(monit);
+        Mockito.verify(user2, Mockito.times(0)).receive(monit);
+    }
 
-    //Możliwość skasowania danej lokalizacji.
 
     @BeforeEach
     public void addSubscribers() {
-        service.addSubscriber(user, location);
-        service.addSubscriber(user2, location2);
+        service.addSubscriber(location, user);
+        service.addSubscriber(location,user3);
+        service.addSubscriber(location2, user2);
+        service.addSubscriber(location2, user3);
+
     }
 }
