@@ -12,13 +12,18 @@ public class ComplexMapExample {
 
         Grades johnGrades = new Grades(5.0, 4.0, 4.5, 5.0, 5.0);
         Grades jessieGrades = new Grades(2.5, 3.0, 2.0);
+        Grades jessieGrades2 = new Grades(2.5, 3.0, 2.0);
         Grades bartGrades = new Grades(4.0, 4.0, 4.0, 4.0, 5.0);
 
         school.put(john, johnGrades);
         school.put(jessie, jessieGrades);
         school.put(bart, bartGrades);
+        school.put(jessie, jessieGrades2);
 
-        System.out.println(school.get(john));
+        System.out.println(school.containsKey(jessie));
+        System.out.println(school.size());
+
+       // System.out.println(school.get(john));
 
         for (Map.Entry<Student, Grades> studentEntry : school.entrySet())
             System.out.println(studentEntry.getKey().getFirstname() + ", average: " +

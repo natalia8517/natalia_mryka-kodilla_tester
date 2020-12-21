@@ -3,8 +3,6 @@ package com.kodilla.exception.homework;
 import junit.framework.TestCase;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class WarehouseTestSuite extends TestCase {
 
     @Test
@@ -19,15 +17,22 @@ public class WarehouseTestSuite extends TestCase {
         //then
         assertEquals("1", order.getNumber());
     }
-
+    // ten test nie przechodzi, nie wiem jak go poprawić.
     @Test(expected = OrderDoesntExistException.class) // ten test nie przechodzi, nie wiem jak go poprawić.
     public void testIsOrderOnList_withException() throws OrderDoesntExistException {
-        // given
+// given
         Warehouse warehouse = new Warehouse();
         warehouse.addOrder(new Order("1"));
-        // when
-        Order order = warehouse.getOrder("5");
-        // then
-        assertNotEquals("1", order.getNumber());
+// when
+        Throwable e = null;
+        try {
+            warehouse.getOrder("5");
+        } catch (Throwable ex) {
+            e = ex;
+        }
+        assertTrue(e instanceof OrderDoesntExistException);
+// Order order = warehouse.getOrder("5");
+// then
+// assertNotEquals("1", order.getNumber());
     }
 }
